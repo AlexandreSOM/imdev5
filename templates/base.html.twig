@@ -15,7 +15,7 @@
 </head>
 <body>
     {% include 'parts/header.html.twig' with {'name': 'navbar'} %}
-    
+
     {% for label, messages in app.flashes(['success', 'warning']) %}
         {% for message in messages %}
             <div class="alert alert-{{ label }}">

@@ -10,23 +10,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home", requirements={"home"="^(?!register).+"})
      */
-//    public function index()
-//    {
-//        return $this->render('home/index.html.twig', [
-//            'controller_name' => 'HomeController',
-//        ]);
-//    }
-//
-//    public function ListeComptes(GestionnaireRepository $gestionnaire_repo)
-//    {
-//        $gestionnaire = $gestionnaire_repo->findOneById($this->getUser()->getId());
-//        $comptes =$gestionnaire->getComptes();
-//        return $this->render('home/index.html.twig', [
-//            'comptes' => $comptes
-//        ]);
-//    }
 
     public function ListeComptes()
     {
@@ -36,5 +21,15 @@ class HomeController extends AbstractController
             'comptes' => $comptes
         ]);
     }
+//    public function ListeComptes(GestionnaireRepository $gestionnaire_repo)
+//    {
+//        $gestionnaire = $gestionnaire_repo->findOneById($this->getUser()->getId());
+//        $comptes =$gestionnaire->getComptes();
+//        return $this->render('home/index.html.twig', [
+//            'comptes' => $comptes
+//        ]);
+//    }
+
+
 
 }

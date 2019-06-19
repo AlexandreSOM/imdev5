@@ -13,8 +13,8 @@ class CompteController extends AbstractController
 
 
     /**
-     * @Route("/compte/ajout", name="compte-ajout")
-     * @Route("detail/{compte}/modifier", name="compte-modifier")
+     * @Route("/compte/ajout", name="compte-ajout", requirements={"remove-compte"="^(?!register).+"})
+     * @Route("detail/{compte}/modifier", name="compte-modifier", requirements={"compte-ajout"="^(?!register).+"})
      */
     public function form(Request $request, Compte $compte = null)
     {
@@ -39,7 +39,7 @@ class CompteController extends AbstractController
     }
 
     /**
-     * @Route("/remove-compte/{compte}", name="remove-compte")
+     * @Route("/remove-compte/{compte}", name="remove-compte", requirements={"remove-compte"="^(?!register).+"})
      */
     public
     function removeCompte(Compte $compte)
