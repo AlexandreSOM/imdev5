@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Listes des gestionnaires </h1>
+
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-active">
+                <th scope="col">NOM</th>
+                <th scope="col">MDP</th>
+                <th scope="col">MODIFICATION</th>
+            </tr>
+            </thead>
+            <tbody class="table">
+
+
+            {% for gestionnaire in gestionnaires %}
+            <tr>
+                <th scope="row">{{ gestionnaire.username }}</th>
+                <td>{{ gestionnaire.password }}</td>
+                <td>
+{#                    <button type="button" class="btn btn-outline-success"> <a href="{{ path('compte-modifier', {'compte': compte.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>#}
+{#                    <a href="#"> {% include 'modal/delete-modal.html.twig' with {'name': 'modal-delete'} %} </a>#}
+                </td>
+                {% endfor %}
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

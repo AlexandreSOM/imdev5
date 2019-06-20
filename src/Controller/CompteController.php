@@ -10,8 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CompteController extends AbstractController
 {
-
-
     /**
      * @Route("/compte/ajout", name="compte-ajout", requirements={"remove-compte"="^(?!register).+"})
      * @Route("detail/{compte}/modifier", name="compte-modifier", requirements={"compte-ajout"="^(?!register).+"})

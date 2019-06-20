@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Compte;
 use App\Repository\GestionnaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,6 +20,19 @@ class HomeController extends AbstractController
         $comptes=$repository->findAll();
         return $this->render('home/index.html.twig', [
             'comptes' => $comptes
+        ]);
+    }
+
+    /**
+     * @Route("/categorie", name="categorie", requirements={"categorie"="^(?!register).+"})
+     */
+
+    public function ListeCategorie()
+    {
+        $repository = $this->getDoctrine()->getRepository(Categorie::class);
+        $categories=$repository->findAll();
+        return $this->render('categorie/index.html.twig', [
+            'categories' => $categories
         ]);
     }
 //    public function ListeComptes(GestionnaireRepository $gestionnaire_repo)
