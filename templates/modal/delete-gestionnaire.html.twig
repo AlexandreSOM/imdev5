@@ -11,11 +11,11 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label" style="font-size: 14px"> Etes-vous sur ? </label>
+                    <div class="form-group" >
+                        <label for="recipient-name" class="col-form-label" style="font-size: 14px; align-items: center;"> Etes-vous sur ? </label>
                     </div>
                 </form>
-                <a href="{{ path('remove-categorie', {'categorie': categorie.id }) }}"> <button type="button" class="btn btn-danger"> OUI </button> </a>
+                <a href="{{ path('remove-gestionnaire', {'gestionnaire': gestionnaire.id }) }}"> <button type="button" class="btn btn-danger"> OUI </button> </a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
             </div>
         </div>

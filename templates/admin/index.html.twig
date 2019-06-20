@@ -9,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Listes des gestionnaires </h1>
+    <h1>Listes des gestionnaires <button type="button" class="btn btn-success"> <a href="{{ path('app_register') }}" style="color:white"> <i class="fas fa-user-plus"></i> </a> </button>  </h1>
 
 
     <div class="card-body">
@@ -29,8 +29,8 @@
                 <th scope="row">{{ gestionnaire.username }}</th>
                 <td>{{ gestionnaire.password }}</td>
                 <td>
-{#                    <button type="button" class="btn btn-outline-success"> <a href="{{ path('compte-modifier', {'compte': compte.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>#}
-{#                    <a href="#"> {% include 'modal/delete-modal.html.twig' with {'name': 'modal-delete'} %} </a>#}
+{#                    <button type="button" class="btn btn-outline-success"> <a href="{{ path('gestionnaire-modifier', {'gestionnaire': gestionnaire.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>#}
+                    <a href="#"> {% include 'modal/delete-gestionnaire.html.twig' with {'name': 'modal-delete'} %} </a>
                 </td>
                 {% endfor %}
 

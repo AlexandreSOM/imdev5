@@ -12,8 +12,8 @@ class CategorieController extends AbstractController
 {
 
     /**
-     * @Route("/categorie/ajout", name="categorie-ajout", requirements={"remove-categorie"="^(?!register).+"})
-     * @Route("detail/{categorie}/modifier", name="categorie-modifier", requirements={"categorie-ajout"="^(?!register).+"})
+     * @Route("/categorie/ajout", name="categorie-ajout", requirements={"categorie-ajout"="^(?!register).+"})
+     * @Route("detail/{categorie}/modifier", name="categorie-modifier", requirements={"categorie-modifier"="^(?!register).+"})
      */
     public function form(Request $request, Categorie $categorie = null)
     {

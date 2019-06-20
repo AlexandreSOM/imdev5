@@ -56,7 +56,7 @@
                     <td>{{ compte.descriptioncompte }}</td>
                     <td>
                         <button type="button" class="btn btn-outline-success"> <a href="{{ path('compte-modifier', {'compte': compte.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>
-                        <a href="#"> {% include 'modal/delete-modal.html.twig' with {'name': 'modal-delete'} %} </a>
+                        <a href="#"> {% include 'modal/delete.compte.html.twig' with {'name': 'modal-delete'} %} </a>
                     </td>
                     {% endfor %}
 

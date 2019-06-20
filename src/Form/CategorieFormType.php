@@ -14,7 +14,7 @@ class CategorieFormType extends AbstractType
     {
         $builder
             ->add('nomCategorie')
-            ->add('save',SubmitType::class)
+            ->add('Valider',SubmitType::class)
         ;
     }
 

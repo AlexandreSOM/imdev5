@@ -37,6 +37,8 @@
                 <thead>
                 <tr class="table-active">
                     <th scope="col-md-4">NOM DE LA CATEGORIE</th>
+                    <th scope="col-md-4">MODIFICATION</th>
+
                 </tr>
                 </thead>
                 <tbody class="table">
@@ -45,8 +47,9 @@
                 {% for categorie in categories %}
                 <tr>
                     <th scope="row">{{ categorie.nomCategorie }}</th>
-{#                        <button type="button" class="btn btn-outline-success"> <a href="{{ path('compte-modifier', {'compte': compte.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>#}
-{#                        <a href="#"> {% include 'modal/delete-modal.html.twig' with {'name': 'modal-delete'} %} </a>#}
+                    <td>
+                        <button type="button" class="btn btn-outline-success"> <a href="{{ path('categorie-modifier', {'categorie': categorie.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>
+                        <a href="#"> {% include 'modal/delete-categorie.html.twig' with {'name': 'modal-delete'} %} </a>
                     </td>
                     {% endfor %}
 
