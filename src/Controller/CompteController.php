@@ -14,11 +14,18 @@ class CompteController extends AbstractController
      * @Route("/compte/ajout", name="compte-ajout", requirements={"compte-ajout"="^(?!register).+"})
      * @Route("detail/{compte}/modifier", name="compte-modifier", requirements={"compte-modifier"="^(?!register).+"})
      */
-    public function form(Request $request, Compte $compte = null)
+    public function form(Request $request, Compte $compte = null )
     {
+        if($compte->getGestionnaire()->getId() != $this->getUser()->getId() ) {
+            return $this->redirectToRoute('home');
+        }
+
         if(!$compte){
             $compte = new Compte();
         }
+
+
+
         $form = $this->createForm(CompteFormType::class, $compte);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

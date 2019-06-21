@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/gestionnaire", name="gestionnaire")
+     * @Route("/admin/gestionnaire", name="gestionnaire")
      */
     public function listeGestionnaire()
     {
@@ -48,7 +48,7 @@ class AdminController extends AbstractController
 //    }
 
     /**
-     * @Route("/remove-gestionnaire/{gestionnaire}", name="remove-gestionnaire", requirements={"remove-gestionnaire"="^(?!register).+"})
+     * @Route("/admin/remove-gestionnaire/{gestionnaire}", name="remove-gestionnaire", requirements={"remove-gestionnaire"="^(?!register).+"})
      */
     public function removeAdmin(Gestionnaire $gestionnaire)
     {
