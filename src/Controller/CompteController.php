@@ -16,9 +16,9 @@ class CompteController extends AbstractController
      */
     public function form(Request $request, Compte $compte = null )
     {
-        if($compte->getGestionnaire()->getId() != $this->getUser()->getId() ) {
-            return $this->redirectToRoute('home');
-        }
+//        if($compte->getGestionnaire()->getId() != $this->getUser()->getId() ) {
+//            return $this->redirectToRoute('home');
+//        }
 
         if(!$compte){
             $compte = new Compte();

@@ -53,6 +53,11 @@ class Compte
      */
     private $nomCategorie;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="comptes")
+     */
+    private $category;
+
     public function __construct()
     {
         $this->nomCategorie = new ArrayCollection();
@@ -157,6 +162,18 @@ class Compte
         if ($this->nomCategorie->contains($nomCategorie)) {
             $this->nomCategorie->removeElement($nomCategorie);
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

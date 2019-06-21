@@ -20,6 +20,7 @@
         {{ form_start(form) }}
         <table class="table">
             <tr>
+                <th scope="row">{{ form_row(form.category) }}</th>
                 <th scope="row">{{ form_row(form.nomCompte, {'attr' : {'placeholder' : "Nom du compte"}}) }}</th>
                 <td>{{ form_row(form.urlCompte, {'attr' : {'placeholder' : "Placer ici l'URL"}}) }}</td>
                 <td>{{ form_row(form.loginCompte, {'attr' : {'placeholder' : "Votre identifiant"}}) }}</td>

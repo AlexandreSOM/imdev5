@@ -24,6 +24,10 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/categorie", name="categorie", requirements={"categorie"="^(?!register).+"})
+     */
+
     public function ListeCategorie()
     {
         $repository = $this->getDoctrine()->getRepository(Categorie::class);
@@ -34,20 +38,6 @@ class HomeController extends AbstractController
     }
 
 
-//    /**
-//     * @Route("/categorie", name="categorie", requirements={"categorie"="^(?!register).+"})
-//     */
-//
-//    public function ListeCategorie()
-//    {
-//        $repository = $this->getDoctrine()->getRepository(Categorie::class);
-//        $categories=$repository->findAll();
-//        return $this->render('home/index.html.twig', [
-//            'categories' => $categories
-//        ]);
-//    }
-//
-//
 
 
 }

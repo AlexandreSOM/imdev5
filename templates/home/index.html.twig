@@ -16,7 +16,7 @@
 
 
 
-    <div class="card example-wrapper">
+     <div class="card example-wrapper">
 
         <div class="card-header">
             <div>
@@ -39,6 +39,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr class="table-active">
+                    <th scope="col">CATEGORIE</th>
                     <th scope="col">COMPTE</th>
                     <th scope="col">LIEN</th>
                     <th scope="col">LOGIN</th>
@@ -52,19 +53,14 @@
 
                 {% for compte in comptes %}
                 <tr>
+                    <td>
+                        {{ compte.category.title }}
+                    </td>
                     <th scope="row">{{ compte.nomcompte }}</th>
                     <td>{{ compte.urlcompte }}</td>
                     <td>{{ compte.logincompte }}</td>
                     <td>{{ compte.passwordcompte }}</td>
                     <td>{{ compte.descriptioncompte }}</td>
-                    <td>
-                    <td>
-                        Ici faire afficher le nom des categories
-{#                        {% for categorie in categorie.compte %}#}
-{#                            {{ nomCategorie }} <br>#}
-{#                        {% endfor %}#}
-                    </td>
-                    </td>
                     <td>
                         <button type="button" class="btn btn-outline-success"> <a href="{{ path('compte-modifier', {'compte': compte.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>
                         <a href="#"> {% include 'modal/delete.compte.html.twig' with {'name': 'modal-delete'} %} </a>
