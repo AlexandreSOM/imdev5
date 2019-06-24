@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Compte;
 use App\Form\CompteFormType;
 use App\Repository\GestionnaireRepository;
+use Illuminate\Encryption\Encrypter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -26,13 +27,6 @@ class CompteController extends AbstractController
         $form = $this->createForm(CompteFormType::class, $compte);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-//            // encode the plain password
-//            $compte->setPasswordCompte(
-//                $passwordEncoder->encodePassword(
-//                    $compte,
-//                    $form->get('plainPassword')->getData()
-//                )
-//            );
             $compte = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($compte);

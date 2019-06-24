@@ -102,6 +102,9 @@
     "fzaninotto/faker": {
         "version": "v1.8.0"
     },
+    "hashids/hashids": {
+        "version": "3.0.0"
+    },
     "illuminate/contracts": {
         "version": "v5.8.24"
     },
@@ -149,6 +152,18 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
+    },
+    "roukmoute/hashids-bundle": {
+        "version": "1.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.4",
+            "ref": "cbd9de476f57c91bd6f8a4db1fd0ed05befa8fc4"
+        },
+        "files": [
+            "./config/packages/roukmoute_hashids.yaml"
+        ]
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",

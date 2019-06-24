@@ -105,8 +105,8 @@ class Compte
 
     public function setPasswordCompte(?string $passwordCompte): self
     {
-        $this->passwordCompte = $passwordCompte;
-
+//        $this->passwordCompte = $passwordCompte;
+        $this->passwordCompte = password_hash($passwordCompte, PASSWORD_DEFAULT);
         return $this;
     }
 
@@ -144,5 +144,10 @@ class Compte
         $this->category = $category;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getPasswordCompte();
     }
 }
