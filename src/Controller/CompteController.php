@@ -6,8 +6,10 @@ use App\Entity\Compte;
 use App\Form\CompteFormType;
 use App\Repository\GestionnaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class CompteController extends AbstractController
 {
@@ -24,6 +26,13 @@ class CompteController extends AbstractController
         $form = $this->createForm(CompteFormType::class, $compte);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+//            // encode the plain password
+//            $compte->setPasswordCompte(
+//                $passwordEncoder->encodePassword(
+//                    $compte,
+//                    $form->get('plainPassword')->getData()
+//                )
+//            );
             $compte = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($compte);

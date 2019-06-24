@@ -81,6 +81,7 @@ class Gestionnaire implements UserInterface
         return array_unique($roles);
     }
 
+
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
@@ -151,8 +152,4 @@ class Gestionnaire implements UserInterface
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->getUsername();
-    }
 }
