@@ -14,24 +14,26 @@
 
     <h1> Bienvenue - Accueil</h1>
 
-     <div class="card example-wrapper">
+
+
+    <div class="card example-wrapper">
 
         <div class="card-header">
             <div>
                 <h3> Liste de vos comptes <button type="button" class="btn btn-success"> <a href="{{ path('compte-ajout') }}" style="color:white"> <i class="fas fa-user-plus"></i> </a> </button>
                 </h3>
             </div>
-                    <ul class="nav nav-pills card-header-pills">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{  path('home') }}"> MES COMPTES </a>
-                        </li>
-                        <li class="nav-item">
-{#                            <a class="nav-link" href="{{ path('categorie') }}">PAR CATEGORIES</a>#}
-                        </li>
-                    </ul>
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{  path('home') }}"> MES COMPTES </a>
+                </li>
+                <li class="nav-item">
+                    {#                            <a class="nav-link" href="{{ path('categorie') }}">PAR CATEGORIES</a>#}
+                </li>
+            </ul>
         </div>
 
-{#Affichage du tableau - liste des comptes #}
+        {#Affichage du tableau - liste des comptes #}
 
         <div class="card-body">
             <table class="table table-hover">

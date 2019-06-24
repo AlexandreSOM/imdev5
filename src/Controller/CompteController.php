@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Compte;
 use App\Form\CompteFormType;
+use App\Repository\GestionnaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,17 +15,11 @@ class CompteController extends AbstractController
      * @Route("/compte/ajout", name="compte-ajout", requirements={"compte-ajout"="^(?!register).+"})
      * @Route("detail/{compte}/modifier", name="compte-modifier", requirements={"compte-modifier"="^(?!register).+"})
      */
-    public function form(Request $request, Compte $compte = null )
+    public function form(Request $request, Compte $compte = null)
     {
-//        if($compte->getGestionnaire()->getId() != $this->getUser()->getId() ) {
-//            return $this->redirectToRoute('home');
-//        }
-
         if(!$compte){
             $compte = new Compte();
         }
-
-
 
         $form = $this->createForm(CompteFormType::class, $compte);
         $form->handleRequest($request);
@@ -37,7 +32,7 @@ class CompteController extends AbstractController
             return $this->redirectToRoute('home');
         } else {
             return $this->render('compte/edit-compte.html.twig', [
-                'form' => $form->createView(), 'errors' => $form->getErrors()
+                'formCompte' => $form->createView(), 'errors' => $form->getErrors()
             ]);
 
         }

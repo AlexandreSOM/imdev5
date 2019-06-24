@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin/gestionnaire", name="gestionnaire")
+     * @Route("/gestionnaire", name="gestionnaire")
      */
     public function listeGestionnaire()
     {

@@ -9,7 +9,7 @@
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
         .example-wrapper table { text-align: center; font-size: 14px;}
     </style>
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {% form_theme formCompte 'bootstrap_4_layout.html.twig' %}
 
     <div class="example-wrapper">
 
@@ -17,21 +17,21 @@
 
         <button type="button" class="btn btn-outline-primary" > <a href="{{ path('home') }}"><i class="fas fa-home"></i>  Retour sur accueil  </a></button>
 
-        {{ form_start(form) }}
+        {{ form_start(formCompte) }}
         <table class="table">
             <tr>
-                <th scope="row">{{ form_row(form.category) }}</th>
-                <th scope="row">{{ form_row(form.nomCompte, {'attr' : {'placeholder' : "Nom du compte"}}) }}</th>
-                <td>{{ form_row(form.urlCompte, {'attr' : {'placeholder' : "Placer ici l'URL"}}) }}</td>
-                <td>{{ form_row(form.loginCompte, {'attr' : {'placeholder' : "Votre identifiant"}}) }}</td>
-                <td>{{ form_row(form.passwordCompte, {'attr' : {'placeholder' : "Votre mot de passe"}}) }}</td>
-                <td>{{ form_row(form.descriptionCompte, {'attr' : {'placeholder' : "Votre description"}}) }}</td>
+                <th scope="row">{{ form_row(formCompte.category) }}</th>
+                <th scope="row">{{ form_row(formCompte.nomCompte, {'attr' : {'placeholder' : "Nom du compte"}}) }}</th>
+                <td>{{ form_row(formCompte.urlCompte, {'attr' : {'placeholder' : "Placer ici l'URL"}}) }}</td>
+                <td>{{ form_row(formCompte.loginCompte, {'attr' : {'placeholder' : "Votre identifiant"}}) }}</td>
+                <td>{{ form_row(formCompte.passwordCompte, {'attr' : {'placeholder' : "Votre mot de passe"}}) }}</td>
+                <td>{{ form_row(formCompte.descriptionCompte, {'attr' : {'placeholder' : "Votre description"}}) }}</td>
             </tr>
         </table>
         <div class="offset-md-5 col-md-4">
             <button type="submit" class="btn btn-outline-success"> VALIDER </button>
         </div>
-        {{ form_end(form) }}
+        {{ form_end(formCompte) }}
     </div>
 
 {% endblock %}

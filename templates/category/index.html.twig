@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page edition de categorie {% endblock %}
+
+{% block body %}
+
+    <style>
+        .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .example-wrapper table { text-align: center; font-size: 14px;}
+    </style>
+    {#    {% form_theme form 'bootstrap_4_layout.html.twig' %}#}
+
+    <div class="example-wrapper">
+
+        <h1> EDITION Catégorie
+            <button type="button" class="btn btn-success"> <a href="{{ path('category-ajout') }}" style="color:white"> <i class="fas fa-user-plus"></i> </a> </button>
+        </h1>
+
+        <button type="button" class="btn btn-outline-primary" > <a href="{{ path('home') }}"><i class="fas fa-home"></i>  Retour sur accueil  </a></button>
+
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-active">
+                <th scope="col">CATEGORIE</th>
+                <th scope="col">MODIFICATION</th>
+            </tr>
+            </thead>
+            <tbody class="table">
+
+
+            {% for category in categorys %}
+            <tr>
+                <th scope="row">{{ category.title }}</th>
+                <td>
+                                        <button type="button" class="btn btn-outline-success"> <a href="{{ path('category-modifier', {'category': category.id}) }}"> <i class="fas fa-user-edit"></i>  </a>  </button>
+                                        <a href="#"> {% include 'modal/delete-category.html.twig' with {'name': 'modal-delete'} %} </a>
+                </td>
+                {% endfor %}
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
