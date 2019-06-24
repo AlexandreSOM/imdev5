@@ -47,21 +47,15 @@ class Compte
      * @ORM\ManyToOne(targetEntity="App\Entity\Gestionnaire", inversedBy="comptes")
      */
     private $gestionnaire;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Categorie", inversedBy="comptes")
-     */
-    private $nomCategorie;
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="comptes")
      */
     private $category;
 
-    public function __construct()
-    {
-        $this->nomCategorie = new ArrayCollection();
-    }
+//    public function __construct()
+//    {
+//        $this->nomCategorie = new ArrayCollection();
+//    }
 
     public function getId(): ?int
     {
@@ -136,32 +130,6 @@ class Compte
     public function setGestionnaire(?Gestionnaire $gestionnaire): self
     {
         $this->gestionnaire = $gestionnaire;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Categorie[]
-     */
-    public function getNomCategorie(): Collection
-    {
-        return $this->nomCategorie;
-    }
-
-    public function addNomCategorie(Categorie $nomCategorie): self
-    {
-        if (!$this->nomCategorie->contains($nomCategorie)) {
-            $this->nomCategorie[] = $nomCategorie;
-        }
-
-        return $this;
-    }
-
-    public function removeNomCategorie(Categorie $nomCategorie): self
-    {
-        if ($this->nomCategorie->contains($nomCategorie)) {
-            $this->nomCategorie->removeElement($nomCategorie);
-        }
 
         return $this;
     }
