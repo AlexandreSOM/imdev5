@@ -24,12 +24,12 @@ class AdminController extends AbstractController
     /**
      * @Route("detail/{gestionnaire}/modifier", name="gestionnaire-modifier", requirements={"gestionnaire-ajout"="^(?!register).+"})
      */
-    public function form(Request $request, Gestionnaire $gestionnaire = null)
+    public function form(Request $request)
     {
-        if(!$gestionnaire){
-            $gestionnaire = new Gestionnaire();
-        }
-        $form = $this->createForm(RegistrationFormType::class, $gestionnaire);
+//        if(!$gestionnaire){
+//            $gestionnaire = new Gestionnaire();
+//        }
+        $form = $this->createForm(RegistrationFormType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $gestionnaire = $form->getData();

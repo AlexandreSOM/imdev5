@@ -2,38 +2,29 @@
 
 namespace App\Controller;
 
+use App\Form\SearchFormType;
+use App\Repository\CompteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SearchController extends AbstractController
 {
-//    /**
-//     * @Route("/search", name="search")
-//     */
-//    public function index()
+    /**
+     * @Route("/search", name="search")
+     */
+//    public function index(Request $request, CompteRepository $compteRepository)
 //    {
+//        $comptes = [];
+//        $form = $this->createForm(SearchFormType::class);
+//        if($form->handleRequest($request)->isSubmitted() && $form->isValid()) {
+//            $dataSearch = $form->getData();
+//            $comptes = $compteRepository->findCompte($dataSearch);
+//        }
 //        return $this->render('search/index.html.twig', [
-//            'controller_name' => 'SearchController',
+//            'formSearch' => $form->createView(),
+//            'comptes' => $comptes,
+//            'errors' => $form->getErrors()
 //        ]);
 //    }
-
-    /**
-     * @Route("compte/search", name="search-compte")
-     */
-    public function searchCompte(Request $request)
-    {
-        $form = $this->createFormBuilder(null)
-                ->add('query', TextType::class)
-                ->add('search', SubmitType::class)
-
-            ->getForm()
-        ;
-
-        return $this->render('search/index.html.twig', [
-            'formSearch' => $form->createView()
-            ]);
-    }
 }

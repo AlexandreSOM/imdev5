@@ -22,7 +22,6 @@ class CompteFormType extends AbstractType
             ->add('urlCompte')
             ->add('loginCompte')
             ->add('passwordCompte')
-
             ->add('descriptionCompte')
 
         ;

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Compte;
 use App\Entity\Gestionnaire;
+use App\Repository\CategoryRepository;
 use App\Repository\GestionnaireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,17 +20,19 @@ class HomeController extends AbstractController
     {
         $repository = $this->getDoctrine()->getRepository(Compte::class);
         $comptes=$repository->findAll();
+//        $comptes=$repository->findBy(array(), array('category' => 'asc'));
+
         return $this->render('home/index.html.twig', [
             'comptes' => $comptes
         ]);
-    }
 
+    }
 
     /**
      * @Route("/mescomptes", name="mescomptes", requirements={"home"="^(?!register).+"})
      */
 
-    public function listeCompteBy()
+    public function listeCompteBy(CategoryRepository $category)
     {
         // Recuperer l'id de l'utilisateur connecté
         $userConnected = $this->get('security.token_storage')
@@ -44,7 +47,6 @@ class HomeController extends AbstractController
             ->findBy(
                 ['gestionnaire' => $userConnected->getId()]
             );
-
         return $this->render('gestionnaire/mescomptes.html.twig', [
             'comptes' => $comptes
         ]);

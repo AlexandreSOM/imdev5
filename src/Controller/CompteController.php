@@ -35,7 +35,8 @@ class CompteController extends AbstractController
             return $this->redirectToRoute('home');
         } else {
             return $this->render('compte/edit-compte.html.twig', [
-                'formCompte' => $form->createView(), 'errors' => $form->getErrors()
+                'formCompte' => $form->createView(),
+                'errors' => $form->getErrors()
             ]);
 
         }
